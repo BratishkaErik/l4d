@@ -1,0 +1,16 @@
+[Unit]
+Description=Spring Boot Backend Service
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=__REPO_ROOT__/backend
+ExecStart=/usr/bin/java -jar __REPO_ROOT__/backend/app.jar
+Restart=always
+RestartSec=5
+Environment=SPRING_PROFILES_ACTIVE=prod
+
+[Install]
+WantedBy=multi-user.target
