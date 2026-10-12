@@ -4,10 +4,10 @@ After=network.target
 
 [Service]
 Type=simple
-User=www-data
-Group=www-data
-WorkingDirectory=__REPO_ROOT__/frontend
-ExecStart=/usr/bin/node __REPO_ROOT__/frontend/.output/server/index.mjs
+User=nuxtapp
+Group=nuxtapp
+WorkingDirectory=/home/nuxtapp/app
+ExecStart=/usr/bin/node /home/nuxtapp/app/.output/server/index.mjs
 Restart=always
 RestartSec=5
 Environment=NODE_ENV=production PORT=3000 HOST=127.0.0.1

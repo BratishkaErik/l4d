@@ -4,10 +4,10 @@ After=network.target postgresql.service
 
 [Service]
 Type=simple
-User=www-data
-Group=www-data
-WorkingDirectory=__REPO_ROOT__/backend
-ExecStart=/usr/bin/java -jar __REPO_ROOT__/backend/app.jar
+User=gamebackend
+Group=gamebackend
+WorkingDirectory=/home/gamebackend/app
+ExecStart=/usr/bin/java -jar /home/gamebackend/app/app.jar
 Restart=always
 RestartSec=5
 Environment=SPRING_PROFILES_ACTIVE=prod
